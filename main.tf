@@ -1,10 +1,21 @@
+terraform {
+  required_providers {
+    aws = {
+      source  = "hashicorp/aws"
+      version = "4.52.0"
+    }
+  }
+  required_version = ">= 1.1.0"
+}
+
+
 provider "aws" {
-  region = "us-east-2" 
+  region = "us-east-2"
 }
 
 resource "aws_instance" "web_server" {
-  ami           = var.ami_id
-  instance_type = var.instance_type
+  ami                    = "ami-0862be96e41dcbf74"
+  instance_type          = var.instance_type
   vpc_security_group_ids = [aws_security_group.web-sg.id]
 
   user_data = <<-EOF
@@ -17,7 +28,7 @@ resource "aws_instance" "web_server" {
               EOF
 
   tags = {
-    Name = "web-server"
+    Name = "web-server2"
   }
 }
 
@@ -40,5 +51,5 @@ resource "aws_security_group" "web-sg" {
 }
 
 output "web_server_ip" {
-  value = aws_instance.web_server.pu
+  value = aws_instance.web_server.public_ip
 }
