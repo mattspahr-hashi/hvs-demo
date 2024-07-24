@@ -44,6 +44,8 @@ data "aws_ami" "ubuntu" {
     name   = "virtualization-type"
     values = ["hvm"]
   }
+
+  owners = ["099720109477"]
 }
 
 # Security Group that allows public web access
