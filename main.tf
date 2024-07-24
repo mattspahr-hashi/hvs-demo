@@ -17,7 +17,7 @@ resource "aws_instance" "web_server" {
               EOF
 
   tags = {
-    Name = "web-server"
+    Name = "web-server2"
   }
 }
 
@@ -40,5 +40,5 @@ resource "aws_security_group" "web-sg" {
 }
 
 output "web_server_ip" {
-  value = aws_instance.web_server.pu
+  value = aws_instance.web_server.public_ip
 }
