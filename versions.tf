@@ -3,7 +3,7 @@ terraform {
     organization = "mattspahr-sandbox"
 
     workspaces {
-      name = ""
+      name = "hvs-demo"
     }
   }
 }
