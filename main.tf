@@ -3,15 +3,19 @@ terraform {
     aws = {
       source  = "hashicorp/aws"
       version = "4.52.0"
-      region = "us-east-2"
     }
   }
   required_version = ">= 1.1.0"
 }
 
+
+provider "aws" {
+  region = "us-east-2"
+}
+
 resource "aws_instance" "web_server" {
-  ami           = data.aws_ami.ubuntu
-  instance_type = var.instance_type
+  ami                    = data.aws_ami.ubuntu
+  instance_type          = var.instance_type
   vpc_security_group_ids = [aws_security_group.web-sg.id]
 
   user_data = <<-EOF
