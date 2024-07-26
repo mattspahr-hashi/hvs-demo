@@ -1,22 +1,8 @@
-terraform {
-  required_providers {
-    aws = {
-      source  = "hashicorp/aws"
-      version = "4.52.0"
-    }
-  }
-  required_version = ">= 1.1.0"
-}
-
-
-provider "aws" {
-  region = "us-east-2"
-}
-
+# Hello World web server
 resource "aws_instance" "web_server" {
-  ami                    = "ami-0862be96e41dcbf74"
-  instance_type          = var.instance_type
-  vpc_security_group_ids = [aws_security_group.web-sg.id]
+  ami             = data.aws_ami.latest_amazon_linux.id
+  instance_type   = var.instance_type
+  security_groups = [aws_security_group.web_sg.name]
 
   user_data = <<-EOF
               #!/bin/bash
@@ -28,12 +14,28 @@ resource "aws_instance" "web_server" {
               EOF
 
   tags = {
-    Name = "web-server2"
+    Name = "web-server1"
+  }
+}
+
+# Data block to fetch the latest Amazon Linux 2 AMI
+data "aws_ami" "latest_amazon_linux" {
+  most_recent = true
+  owners      = ["amazon"]
+
+  filter {
+    name   = "name"
+    values = ["amzn2-ami-hvm-*-x86_64-gp2"]
+  }
+
+  filter {
+    name   = "architecture"
+    values = ["x86_64"]
   }
 }
 
 # Security Group that allows public web access
-resource "aws_security_group" "web-sg" {
+resource "aws_security_group" "web_sg" {
   name = "web-server-sg"
   ingress {
     from_port   = 80
