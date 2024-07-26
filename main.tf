@@ -6,11 +6,11 @@ resource "aws_instance" "web_server" {
 
   user_data = <<-EOF
               #!/bin/bash
-              echo "Hello, World!" > /var/www/html/index.html
               yum update -y
               yum install -y httpd
               systemctl start httpd
               systemctl enable httpd
+              echo "Hello, World!" > /var/www/html/index.html
               EOF
 
   tags = {
