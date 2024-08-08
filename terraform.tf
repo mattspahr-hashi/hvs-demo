@@ -1,14 +1,16 @@
 terraform {
   required_providers {
-    aws = {
-      source  = "hashicorp/aws"
-      version = "4.52.0"
+    hcp = {
+      source  = "hashicorp/hcp"
+      version = "~> 0.94.1"
     }
   }
-  required_version = ">= 1.1.0"
 }
 
+provider "hcp" {}
 
-provider "aws" {
-  region = "us-east-2"
+provider "tfe" {
+  organization = "mattspahr-sandbox"
 }
+
+provider "random" {}
