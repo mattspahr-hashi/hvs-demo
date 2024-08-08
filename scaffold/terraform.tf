@@ -12,5 +12,3 @@ provider "hcp" {}
 provider "tfe" {
   organization = "mattspahr-sandbox"
 }
-
-provider "random" {}

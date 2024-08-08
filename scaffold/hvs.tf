@@ -1,9 +1,3 @@
-# Project for HVS Demo
-resource "hcp_project" "project" {
-  name        = "hvs-demo-project"
-  description = "Example project for Demoing HVS"
-}
-
 # App for HVS Demo
 resource "hcp_vault_secrets_app" "app" {
   project_id  = hcp_project.project.resource_id
