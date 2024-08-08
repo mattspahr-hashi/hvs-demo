@@ -10,7 +10,7 @@ terraform {
 provider "random" {}
 
 resource "random_string" "random" {
-  length  = 16
+  length  = 15
   special = true
 }
 output "random_string" {
