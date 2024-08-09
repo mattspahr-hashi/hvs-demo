@@ -6,20 +6,20 @@ Project is used to demo HCP Vault Secrets.
 
 ## Usage
 1. ```cd scaffold```
-2. ```terraform init```
-3. ```terraform apply```
-4. This will provision a new demo environment:
-      1. ```STRIPE_API_KEY``` in the HVS App
-      2. ```TF_API_TOKEN``` in the HVS App with no value
-      3. ```DATABASE_USERNAME``` in the HVS App
-      4. ```DATABASE_PASSWORD``` in the HVS App
+2. ```hcp auth login```
+3. ```terraform init```
+4. ```terraform apply```
+5. This will provision a new demo environment:
+      1. ```STRIPE_API_KEY``` in the HVS Retreival App
+      2. ```TF_API_TOKEN``` in the HVS Github App with no value
+      3. ```DATABASE_USERNAME``` in the HVS Terraform App
+      4. ```DATABASE_PASSWORD``` in the HVS Terraform App
    1. Output:
       1. ```terraform_org_token``` : Used for HVS Secret Sync with HCP Terraform
-5. Create new Secret Sync with HCP Terraform
-   1. Use ```hvs-terraform-demo-app```
-6. Create new HCP Terraform User Token & set value of ```TF_API_TOKEN```
+6. Create new Secret Sync with HCP Terraform
+   1. Use ```terraform-demo-app```
 7. Create Secrets Sync with Github Actions
-   1. Use ```hvs-github-demo-app```
+   1. Use ```github-demo-app```
 8. ```cd .. && cd app```
 9. **Demo**
 

@@ -1,23 +1,33 @@
-# Github App for HVS Demo
+# Github App for Github Actions Secret Sync
+
 resource "hcp_vault_secrets_app" "github-app" {
   project_id  = hcp_project.project.resource_id
-  app_name    = "hvs-github-demo-app"
-  description = "Example app for Demoing HVS"
+  app_name    = "github-app"
+  description = "Example app for Github Actions Secret Sync"
 }
 
-# Terraform App for HVS Demo
+# Terraform App for HCP Terraform Secret Sync
 resource "hcp_vault_secrets_app" "terraform-app" {
   project_id  = hcp_project.project.resource_id
-  app_name    = "hvs-terraform-demo-app"
-  description = "Example app for Demoing HVS"
+  app_name    = "terraform-app"
+  description = "Example app for HCP Terraform Secret Sync"
 }
 
-# Secret for Github Pages Retrieval Demo
+# App for retreival using service principal
+resource "hcp_vault_secrets_app" "retreival-app" {
+  project_id  = hcp_project.project.resource_id
+  app_name    = "retreival-app"
+  description = "Example app for direct lookup on application secrets"
+}
+
+resource "random_uuid" "api_token" {}
+
+# Secret for TF Retrieval
 resource "hcp_vault_secrets_secret" "demo_app_secret" {
-  app_name     = hcp_vault_secrets_app.github-app.app_name
+  app_name     = hcp_vault_secrets_app.retreival-app.app_name
   project_id   = hcp_project.project.resource_id
   secret_name  = "STRIPE_API_KEY"
-  secret_value = "secret-value-1"
+  secret_value = random_uuid.api_token.result
 }
 
 # Secret for HCP Terraform Sync

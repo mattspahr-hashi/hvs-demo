@@ -4,11 +4,10 @@ resource "hcp_project" "project" {
   description = "Example project for Demoing HVS"
 }
 
-# Service Principal for Github Actions
+# Service Principal for HCP Terraform lookup
 resource "hcp_service_principal" "terraform_run_sp" {
   name   = "terraform-run"
   parent = hcp_project.project.resource_name
-
 }
 
 # Service Principal Keys for Github Actions Auth
