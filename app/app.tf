@@ -48,12 +48,12 @@ data "hcp_vault_secrets_secret" "demo_secret" {
 }
 
 output "database_username" {
-  value     = var.DATBASE_USERNAME
+  value     = var.DATABASE_USERNAME
   sensitive = true
 }
 
 output "database_password" {
-  value     = var.DATBASE_PASSWORD
+  value     = var.DATABASE_PASSWORD
   sensitive = true
 }
 
