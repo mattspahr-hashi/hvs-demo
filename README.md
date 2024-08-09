@@ -1,8 +1,11 @@
 # hvs-demo
 
 Project is used to demo HCP Vault Secrets.
+- Secret Sync with Github Actions
+- Secret Sync with HCP Terraform
+- Direct Retrieval with HCP Project Service Principal, HVS, & Terraform
 
-[Outline Notes](https://www.notion.so/hashicorp/HVS-Secrets-Sync-Demo-Outline-fa7b53acf6b244788bf2e1df0fbdda7c)
+[Demo Outline Notes](https://docs.google.com/document/d/1h5cBMu_4UuvnHehlF3gfMVEbtdZdUQF0ILY9fmKR9BE)
 
 ## Usage
 1. ```cd scaffold```
