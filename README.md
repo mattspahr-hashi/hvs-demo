@@ -28,8 +28,8 @@ Project is used to demo HCP Vault Secrets.
 
 ## Folder Structure
 
-```scaffold```: Directory used for scaffolding out the demo environment
+```scaffold```: Contains scaffolding out the demo environment
 
-```app```: Directory used for demoing functionality
+```app```: Cointains demo functionality
 
-```.github```: Directory contains all github-actions workflows
+```.github```: Contains all github-actions workflows
