@@ -13,10 +13,10 @@ resource "hcp_vault_secrets_app" "terraform-app" {
 }
 
 # Secret for Github Pages Retrieval Demo
-resource "hcp_vault_secrets_secret" "demo_gh_secret" {
+resource "hcp_vault_secrets_secret" "demo_app_secret" {
   app_name     = hcp_vault_secrets_app.github-app.app_name
   project_id   = hcp_project.project.resource_id
-  secret_name  = "DEMO_SECRET"
+  secret_name  = "STRIPE_API_KEY"
   secret_value = "secret-value-1"
 }
 

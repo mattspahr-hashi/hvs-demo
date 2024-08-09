@@ -9,7 +9,7 @@ Project is used to demo HCP Vault Secrets.
 2. ```terraform init```
 3. ```terraform apply```
 4. This will provision a new demo environment:
-      1. ```DEMO_SECRET``` in the HVS App
+      1. ```STRIPE_API_KEY``` in the HVS App
       2. ```TF_API_TOKEN``` in the HVS App with no value
       3. ```DATABASE_USERNAME``` in the HVS App
       4. ```DATABASE_PASSWORD``` in the HVS App

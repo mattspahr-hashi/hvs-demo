@@ -41,10 +41,10 @@ data "tfe_variables" "workspace_variables" {
   workspace_id = data.tfe_workspace.workspace.id
 }
 
-# Get DEMO_SECRET directly from HVS
+# Get STRIPE_API_KEY directly from HVS
 data "hcp_vault_secrets_secret" "demo_secret" {
   app_name    = "hvs-github-demo-app"
-  secret_name = "DEMO_SECRET"
+  secret_name = "STRIPE_API_KEY"
 }
 
 output "database_username" {
@@ -57,7 +57,7 @@ output "database_password" {
   sensitive = true
 }
 
-output "hcp_vault_secrets_retrieval" {
-  value     = "${data.hcp_vault_secrets_secret.demo_secret.secret_name}: ${data.hcp_vault_secrets_secret.demo_secret.secret_value}"
+output "stripe_api_key" {
+  value     = data.hcp_vault_secrets_secret.demo_secret.secret_value
   sensitive = true
 }
