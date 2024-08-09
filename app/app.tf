@@ -27,7 +27,7 @@ provider "tfe" {
 
 # Random String
 resource "random_string" "random_string" {
-  length = 16
+  length = 15
 }
 
 # Get STRIPE_API_KEY directly from HVS
