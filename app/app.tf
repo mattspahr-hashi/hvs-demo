@@ -27,7 +27,7 @@ provider "tfe" {
 
 # Random String
 resource "random_string" "random_string" {
-  length = 10
+  length = 11
 }
 
 # Get Workspace
