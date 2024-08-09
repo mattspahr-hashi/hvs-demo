@@ -23,7 +23,6 @@ Project is used to demo HCP Vault Secrets.
    1. Use ```terraform-demo-app```
 7. Create Secrets Sync with Github Actions
    1. Use ```github-demo-app```
-8. ```cd .. && cd app```
 9. **Demo**
 
 ## Folder Structure
