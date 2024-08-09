@@ -16,10 +16,10 @@ variable "HCP_CLIENT_SECRET" {
   type = string
 }
 
-variable "DATBASE_USERNAME" {
+variable "DATABASE_USERNAME" {
   type = string
 }
-variable "DATBASE_PASSWORD" {
+variable "DATABASE_PASSWORD" {
   type = string
 }
 
