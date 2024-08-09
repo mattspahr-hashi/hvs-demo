@@ -28,7 +28,7 @@ jobs:
         uses: actions/checkout@v4
       - name: Replace secret placeholder
         run: |
-          sed -i 's/\[SECRET_PLACEHOLDER\]/${{ secrets.DEMO_SECRET }}/g' static/index.html
+          sed -i 's/\[SECRET_PLACEHOLDER\]/${{ secrets.DEMO_SECRET }}/g' app/static/index.html
       - name: Setup Pages
         uses: actions/configure-pages@v5
       - name: Upload artifact

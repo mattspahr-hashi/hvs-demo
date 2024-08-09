@@ -7,14 +7,20 @@ resource "tfe_workspace" "tfc_workspace" {
   project_id = tfe_project.tfc_project.id
 }
 
+resource "tfe_organization_token" "org_token" {
+  organization = "mattspahr-sandbox"
+}
+
 resource "tfe_variable_set" "hcp_credentials" {
   name         = "HCP Credentials"
   organization = "mattspahr-sandbox"
+  priority     = true
 }
 
 resource "tfe_workspace_variable_set" "service_principal_var_set" {
   workspace_id    = tfe_workspace.tfc_workspace.id
   variable_set_id = tfe_variable_set.hcp_credentials.id
+
 }
 
 resource "tfe_variable" "hcp_client_id" {
