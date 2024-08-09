@@ -12,6 +12,9 @@ terraform {
     }
   }
 }
+
+provider "random" {}
+
 provider "hcp" {
   client_id     = var.HCP_CLIENT_ID
   client_secret = var.HCP_CLIENT_SECRET
@@ -20,6 +23,11 @@ provider "hcp" {
 
 provider "tfe" {
   organization = "mattspahr-sandbox"
+}
+
+# Random String
+resource "random_string" "random_string" {
+  length = 10
 }
 
 # Get Workspace
