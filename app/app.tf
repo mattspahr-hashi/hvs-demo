@@ -47,6 +47,16 @@ data "hcp_vault_secrets_secret" "demo_secret" {
   secret_name = "DEMO_SECRET"
 }
 
+output "database_username" {
+  value     = var.DATBASE_USERNAME
+  sensitive = true
+}
+
+output "database_password" {
+  value     = var.DATBASE_PASSWORD
+  sensitive = true
+}
+
 output "hcp_vault_secrets_retrieval" {
   value     = "${data.hcp_vault_secrets_secret.demo_secret.secret_name}: ${data.hcp_vault_secrets_secret.demo_secret.secret_value}"
   sensitive = true

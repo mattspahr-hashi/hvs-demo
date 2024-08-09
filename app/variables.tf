@@ -15,3 +15,12 @@ variable "HCP_CLIENT_ID" {
 variable "HCP_CLIENT_SECRET" {
   type = string
 }
+
+variable "DATBASE_USERNAME" {
+  type = string
+}
+variable "DATBASE_PASSWORD" {
+  type = string
+}
+
+
