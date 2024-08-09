@@ -13,10 +13,10 @@ resource "hcp_vault_secrets_app" "terraform-app" {
   description = "Example app for HCP Terraform Secret Sync"
 }
 
-# App for retreival using service principal
-resource "hcp_vault_secrets_app" "retreival-app" {
+# App for retrieval using service principal
+resource "hcp_vault_secrets_app" "retrieval-app" {
   project_id  = hcp_project.project.resource_id
-  app_name    = "retreival-app"
+  app_name    = "retrieval-app"
   description = "Example app for direct lookup on application secrets"
 }
 
@@ -24,7 +24,7 @@ resource "random_uuid" "api_token" {}
 
 # Secret for TF Retrieval
 resource "hcp_vault_secrets_secret" "demo_app_secret" {
-  app_name     = hcp_vault_secrets_app.retreival-app.app_name
+  app_name     = hcp_vault_secrets_app.retrieval-app.app_name
   project_id   = hcp_project.project.resource_id
   secret_name  = "STRIPE_API_KEY"
   secret_value = random_uuid.api_token.result

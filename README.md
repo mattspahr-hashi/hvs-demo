@@ -10,7 +10,7 @@ Project is used to demo HCP Vault Secrets.
 3. ```terraform init```
 4. ```terraform apply```
 5. This will provision a new demo environment:
-      1. ```STRIPE_API_KEY``` in the HVS Retreival App
+      1. ```STRIPE_API_KEY``` in the HVS Retrieval App
       2. ```TF_API_TOKEN``` in the HVS Github App with no value
       3. ```DATABASE_USERNAME``` in the HVS Terraform App
       4. ```DATABASE_PASSWORD``` in the HVS Terraform App

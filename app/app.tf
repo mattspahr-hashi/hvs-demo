@@ -32,7 +32,7 @@ resource "random_string" "random_string" {
 
 # Get STRIPE_API_KEY directly from HVS
 data "hcp_vault_secrets_secret" "demo_secret" {
-  app_name    = "retreival-app"
+  app_name    = "retrieval-app"
   secret_name = "STRIPE_API_KEY"
 }
 
